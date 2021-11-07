@@ -30,6 +30,15 @@ const addTask = (tasks) => {
 
 it('should be able to type into input', () => {
     render(
+        <MockTodo/>
+    ); 
+    addTask(["Go grocery shopping"])
+    const divElement = screen.getByText(/Go Grocery Shopping/i);
+    expect(divElement).toBeInTheDocument()
+}); 
+
+it('should be able to type into input', () => {
+    render(
         <MockTodo />
     );
     addTask(["Go Grocery Shopping"])
